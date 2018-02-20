@@ -1,0 +1,110 @@
+---
+title: "Main Conference"
+updated:   2015-12-23 00:00:00
+layout: default
+group: program
+menu: sub
+ordered: 2
+status: none
+---
+
+<h1>{{ page.title }}</h1>
+
+<div class="alert alert-warning text-center" role="alert" style="font-size:20px;">Note: This page is just a <b style="font-size:22px;">prototype</b> for review.</div>
+
+<style>
+div.iswc-program-controlbar{
+	background-color:#000;
+}
+
+div.iswc-program-controlbar  div.btn-group{
+	margin-top:10px;
+}
+
+div.iswc-program-controlbar  div.btn-group:first-child{
+	margin-top:0;
+}
+
+div.iswc-program-controlbar .btn{
+	background-color:#000;
+	border-color: #fff;
+	color: #fff;
+}
+
+div.iswc-program-controlbar .btn.active{
+	background-color:#fff;
+	border-color: #fff;
+	color: #000;
+	font-weight: bold;
+}
+
+div.panel .table tr td:first-child{
+	padding-left:8px;
+}
+
+.detail{
+	padding-left:20px;
+}
+
+label.btn{
+	overflow: hidden;
+}
+
+@media screen and (max-width: 550px){
+	div.iswc-program-controlbar{
+		margin-left:-10px;
+		margin-right:-10px;
+	}
+}
+
+@media screen and (max-width: 450px){
+
+
+
+	label.btn{
+		font-size: 8pt;
+		padding-left:5px;
+		padding-right:5px;
+	}
+
+	label.btn-action{
+		font-size: 10pt;
+	}
+
+	label#btnToday, label#btnNow{
+		font-size: 12pt;
+	}
+}
+
+</style>
+
+<script>
+	$(document).ready(function(){
+		$(".detail").hide();
+
+		$("div.iswc-program-controlbar .btn").bind("click", function(){
+			$(".btn-action").removeClass("active");
+
+	    	var tohide = $(this).attr("to-hide");
+	    	var toshow = $(this).attr("to-show");
+
+	    	if(tohide) $("."+tohide).hide();
+	    	if(toshow) $("."+toshow).show();
+
+	    	var toclick = $(this).attr("to-click");
+	    	if(toclick){
+	    		$(toclick).click();
+	    	}
+
+	    	var toshowdetail = $(this).attr("to-show-detail");
+	    	if(toshowdetail){
+		    	if(toshowdetail=="yes"){
+		    		$(".detail").show();
+		    	}else if(toshowdetail=="no"){
+		    		$(".detail").hide();
+		    	}
+	    	}
+		});
+	});
+</script>
+

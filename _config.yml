@@ -1,0 +1,20 @@
+# Site settings
+title: JIST2018
+email: your-email@domain.com
+description: The Joint International Semantic Technology Conference (JIST) is a joint event for regional Semantic related conferences. The JIST2018 will take place from November 26 to 28, 2018 in the Awaji Yumebutai International Conference Center, Awaji City, Hyogo, Japan.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jist2018.knowledge-graph.jp/" # the base hostname & protocol for your site
+twitter_username: jist2018
+github_username: JISTconference
+
+# Build settings
+markdown: kramdown
+#highlighter: rouge
+
+#Github URL
+github_ghpages: "https://github.com/JISTconference/JIST2018/blob/gh-pages"
+
+offline: false
+
+gems:
+  - jekyll-redirect-from

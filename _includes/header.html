@@ -1,0 +1,181 @@
+<header>
+<div id="iswc-banner-default" class="hidden-xs force-print-yes">
+  <a href="{{ site.baseurl }}/index.html">
+  <img src="{{ site.baseurl }}/images/header/jist2018-header-m.png" width="100%"/>
+</a>
+</div>
+
+<div class="visible-xs force-print-no">
+  <!-- change to "home" if need a big header image on home -->
+  {% if page.group == "home-x" %}
+    <a href="{{ site.baseurl }}/index.html"><img src="{{ site.baseurl }}/images/header/jist-header-m0.png" width="100%"/></a>
+  {% else %}
+    <a href="{{ site.baseurl }}/index.html"><img src="{{ site.baseurl }}/images/header/jist2018-header-m.png" width="100%"/></a>
+  {% endif %}
+</div>
+
+
+<!-- <div style="height:145px;background-image: url({{ site.baseurl }}/images/iswc-header.png); background-repeat: no-repeat;background-size: auto 145px;"></div> -->
+<div id="iswc-nav-dummy" ></div>
+
+<div id="iswc-nav" class="iswc-navbar-back">
+  <nav class="iswc-navbar navbar navbar-inverse">
+
+  <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a href="{{ site.baseurl }}/index.html" class="navbar-brand">ISWC2016</a> -->
+        <div class="navbar-brand visible-xs">Menu</div>
+      </div>
+  	
+     <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-navbar">
+        <ul class="nav navbar-nav">
+            <li><a href="{{ site.baseurl }}/index.html">Home</a></li>
+
+        		<li class="dropdown">
+              <a href="{{ site.baseurl }}/pages/calls.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Calls
+                <span class="caret"></span>
+              </a>
+              {% assign nav_group = "calls" %} {% include subnav.html %}
+            </li>
+
+            <li><a href="{{ site.baseurl }}/pages/important-dates.html">Important Dates</a></li>
+
+            <li class="dropdown">
+              <a href="{{ site.baseurl }}/pages/program.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Program
+                <span class="caret"></span>
+              </a>
+              {% assign nav_group = "program" %} {% include subnav.html %}
+            </li>
+
+            <li class="dropdown">
+              <a href="{{ site.baseurl }}/pages/attending.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Attending
+                <span class="caret"></span>
+              </a>
+              {% assign nav_group = "attending" %} {% include subnav.html %}
+            </li>
+
+            <li class="dropdown">
+              <a href="{{ site.baseurl }}/pages/organization.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Organization
+                <span class="caret"></span>
+              </a>
+              {% assign nav_group = "organization" %} {% include subnav.html %}
+            </li>
+
+        		<li><a href="{{ site.baseurl }}/pages/sponsorship.html">Sponsorship</a></li>
+
+        </ul>
+      </div>
+     </div>
+  </nav>
+</div>
+
+</header>
+<script>
+  $(document).ready(function(){
+    function moveNavTop() {
+      var navTop = $('#iswc-nav-dummy').offset().top;
+
+      if($(window).scrollTop() > navTop && !$("#bs-navbar").hasClass("in")){ 
+        $('#iswc-nav').addClass('iswc-nav-top transparent');
+        $('#iswc-nav-dummy').addClass("iswc-navbar-back");
+        $('#iswc-nav-dummy').height($('#iswc-nav').height());
+
+      }else{
+        $('#iswc-nav').removeClass('iswc-nav-top transparent');
+        $('#iswc-nav-dummy').removeClass("iswc-navbar-back");
+        $('#iswc-nav-dummy').height(0);
+      }  
+    }
+    $(window).bind('scroll', moveNavTop);
+    $(window).bind('touchmove', moveNavTop);
+
+    if(is_touch_device()) imailgen(); //generate mailto if touch screen
+
+  });
+
+  function imailgen(){
+    $("span.hmail").remove(); //Remove all class hmail
+
+    $("imail").each(function(){
+      var emi = $(this).text();
+      $(this).html("<a href='mailto:" + emi + "' >" + emi + "</a>");
+
+    });
+  }
+
+  function is_touch_device() {
+    return 'ontouchstart' in window        // works on most browsers 
+        || 'onmsgesturechange' in window;  // works on IE10 with some false positives
+  };
+</script>
+
+<!-- For sub nav -->
+<script>
+jQuery(function($) {
+    if($(window).width()>769 && !is_touch_device()){
+        $('.navbar .dropdown').hover(function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).delay(150).slideDown();
+
+        }, function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp();
+
+        });
+
+        $('.navbar .dropdown > a').click(function(){
+            location.href = this.href;
+        });
+
+        /*
+        $('.navbar .dropdown > a').dbclick(function(){
+            location.href = this.href;
+        });
+        */
+    }
+
+    //Navbar in mobile
+    $('#bs-navbar').on('show.bs.collapse', function () {
+        var navTop = $('#iswc-nav-dummy').offset().top;
+        if( $(window).scrollTop() > navTop ){
+          $("body").scrollTop(navTop);
+        }
+    });
+});
+</script>
+
+<!--<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        {% for page in site.pages %}
+          {% if page.title %}
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </nav>
+
+  </div>
+
+</header>-->
