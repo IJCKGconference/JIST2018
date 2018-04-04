@@ -1,0 +1,50 @@
+Special session "Resource-aware Semantic Technologies"
+Joint International Semantic Technology Conference (JIST 2018)
+      https://apac01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fjist2018.knowledge-graph.jp%2F&data=01%7C01%7Ctakahiro.kawamura%40jst.go.jp%7C481b96c8aa68437fa02408d584049d11%7C7a15dcb470154556a78f4d8c28e4ef01%7C0&sdata=eox9m5H9x%2F2H79JLtMfEZsjCi6u3vuNx2ac504QcAQc%3D&reserved=0
+
+
+As Semantic Technologies gain momentum, their impact on resources and
+society increases. At the same time application developers would like
+to employ semantic technologies on devices that are heavily resource
+constrained such as mobile devices. So far the efficiency of semantic
+technologies is still mainly assessed by running times. While
+computational and cognitive complexity are investigated, work on their
+resource consumption, e.g. in terms of energy or storage, is still in
+its infancy. However, assessing, managing and predicting the
+resource-consumption is a vital prerequisite for the wider usefulness
+of semantic technologies.
+
+The special session calls for contributions regarding, but not limited
+to the following topics:
+
+- resource-adaptive semantic technologies
+- reasoning algorithms for resource-bound hardware
+- measurement frameworks for energy-consumption of semantic technologies
+- ontologies for energy management
+- prediction methods for resource consumption
+- application of semantic technologies for resource management
+
+
+Important dates:
+
+?????
+
+
+
+Chairs:
+
+Fernando Bobillo, University of Zaragoza, Spain
+Anni-Yasmin Turhan, Technische Universität Dresden, Germany
+
+
+Program Committee
+
+Carlos Bobed, Université of Rennes 1, France
+Fernando Bobillo, University of Zaragoza, Spain
+Martin J. Kollingbaum, University of Aberdeen, UK
+Eduardo Mena, University of Zaragoza, Spain
+Jeff Z. Pan, University of Aberdeen, UK
+Michele Ruta, Polytechnic University of Bari, Italy
+Floriano Scioscia, Polytechnic University of Bari, Italy
+Anni-Yasmin Turhan, Technische Universität Dresden, Germany
+William van Woensel, Dalhousie University, Canada
