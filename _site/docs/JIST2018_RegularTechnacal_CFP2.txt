@@ -22,7 +22,7 @@ JIST 2018 research track solicits submissions of original research work on
 semantic technologies. Topics of interest include, but are not limited to:
 
  -Ontology and reasoning
- -Knowledge Graphs
+ -Knowledge graph
  -Linked Data
  -Big Data and semantics, exchange and integration
  -Data streams and the Internet of Things
