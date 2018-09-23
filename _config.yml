@@ -16,5 +16,5 @@ github_ghpages: "https://github.com/JISTconference/JIST2018/blob/gh-pages"
 
 offline: false
 
-gems:
-  - jekyll-redirect-from
+#plugins:
+#  - jekyll-redirect-from
